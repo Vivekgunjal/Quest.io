@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import styles from "../../styles";
 import { navVariants } from "../../utils/motion";
-
+import { useSession, signIn, signOut } from "next-auth/react"
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
@@ -19,6 +19,7 @@ const navigation = [
 
 export default function Navbar() {
   const router = new useRouter();
+  const { data: session } = useSession();
 
   return (
     <motion.nav
@@ -68,13 +69,19 @@ export default function Navbar() {
                       </div>
                       <div
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/community")}
+                      >
+                        Community
+                      </div>
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/dalle")}
                       >
                         DallE
                       </div>
                       <div
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
-                        onClick={() => router.push("/")}
+                        onClick={() => router.push("/chatgptcomponents")}
                       >
                         ChatGPT
                       </div>
@@ -87,12 +94,27 @@ export default function Navbar() {
                     <div>
                       <Menu.Button className="flex rounded-full text-sm">
                         <span className="sr-only">Open user menu</span>
-                        <img
+                        {session ? (
+                          <img
+                          className="h-8 w-8 rounded-full"
+                          src={session.user?.image}
+                          alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
+                          onClick={() => signOut()}
+                        />
+                        ):(
+                          <img
                           className="h-8 w-8 rounded-full"
                           src="https://cdn.shopify.com/s/files/1/0511/8319/0196/products/12_1.jpg?v=1649371686&width=1445"
                           alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
-                          onClick={() => router.push("/chatgpt")}
+                          onClick={() => signIn()}
                         />
+                        )}
+                        {/* <img
+                          className="h-8 w-8 rounded-full"
+                          src="https://cdn.shopify.com/s/files/1/0511/8319/0196/products/12_1.jpg?v=1649371686&width=1445"
+                          alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
+                          onClick={() => signIn()}
+                        /> */}
                       </Menu.Button>
                     </div>
                   </Menu>
@@ -102,22 +124,30 @@ export default function Navbar() {
 
             <Disclosure.Panel className="sm:hidden z-[50]">
               <div className="space-y-1 px-2 pt-2 pb-3">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-[#EEEEEE]"
-                        : "text-[#EEEEEE] hover:bg-[#33B74B] hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-normal"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
+<div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/")}
+                      >
+                        Home
+                      </div>
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/community")}
+                      >
+                        Community
+                      </div>
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/dalle")}
+                      >
+                        DallE
+                      </div>
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/chatgptcomponents")}
+                      >
+                        ChatGPT
+                      </div>
               </div>
             </Disclosure.Panel>
           </>

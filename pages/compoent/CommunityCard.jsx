@@ -9,47 +9,34 @@ import {
   textVariant2,
 } from "../../utils/motion";
 import { ChatBubbleOvalLeftEllipsisIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
-export default function CommunityCard() {
+export default function CommunityCard({Image_Url, UserName, name}) {
+  const [likes, setlikes] = useState(false);
   return (
 
-        <motion.div class="flex justify-center"
-        variants={textVariant(1.0)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.20 }}
-        >
-  <div
-    class="block max-w-sm rounded-lg bg-[#1a1a1a] shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
-    <a href="#!" data-te-ripple-init data-te-ripple-color="light">
-      <img
-        class="rounded-t-lg"
-        src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg"
-        alt="" />
-    </a>
-    <div class="p-6">
-      <h5
-        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-        @user
-      </h5>
-      <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        Prompt
-      </p>
-      <div className="flex justify-between text-white px-0 lg:px-2">
-        <div>
-        <HeartIcon className="w-7 h-7 hover:transform hover:scale-105"/>
-        <p className="text-center mt-1">113</p>
+    <div>
+    <img className="h-[30vh] w-[100%] rounded-lg" 
+    src={Image_Url} 
+    alt=""/>
+    <div className='flex justify-between lg:px-2 text-yellow-50 lg:text-2xl text-xl pt-2 '>
+        <div className='flex gap-3'>
+        <img
+                      className="h-8 w-8 rounded-full"
+                      src={Image_Url}
+                      alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
+                    />
+                     <h1 className="text-[1rem] truncate">{UserName}</h1>
         </div>
-      <div>
-      <ChatBubbleOvalLeftEllipsisIcon className="w-7 h-7 hover:transform hover:scale-105"/>
-      <p className="text-center mt-1">9</p>
-      </div>
-      
-      </div>
-     
+       <div className="flex flex-col">
+        {likes ? (
+           <HeartIcon className='w-6 h-6 transform transition duration-500 hover:scale-125' onClick={() => setlikes(false)}/>
+        ):(
+          <HeartIcon className='w-6 h-6 text-red-700 fill-red-700 transform transition duration-500 hover:scale-125' onClick={() => setlikes(true)}/>
+        )}
+        <p className="text-sm mx-auto">1</p>
+        </div>
     </div>
-  </div>
-
-    </motion.div>
+</div>
   )
 }

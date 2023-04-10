@@ -9,29 +9,44 @@ import {
   textVariant2,
   fadeIn1,
 } from "../../utils/motion";
-import Tilt from "react-tilt";
 import CommunityCard from "./CommunityCard";
 import { ChatBubbleOvalLeftEllipsisIcon, HeartIcon } from "@heroicons/react/24/outline";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+  QuerySnapshot,
+  serverTimestamp,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { db } from "../../firebase/firebase";
 
 export default function CommunityPreview() {
-  const services = [
-    {
-      title: "Web Developer",
-      icon: 'https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg',
-    },
-    {
-      title: "React Native Developer",
-      icon: 'https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg',
-    },
-    {
-      title: "Backend Developer",
-      icon: 'https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg',
-    },
-    {
-      title: "Content Creator",
-      icon: 'https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg',
-    },
-  ];
+
+  const [images, setimages] = useState(null);
+
+  const getCommuntyImages = async () => {
+      const docRef1 = await getDocs(collection(db, "CommunutyImages")).then(
+          (querySnapshot) => {
+            const newData = querySnapshot.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+            }));
+            setimages(newData)
+console.log(newData)
+          }
+        );
+    };
+
+    useEffect(() => {
+     getCommuntyImages();
+    }, []);
 
   return (
     <>
@@ -46,100 +61,75 @@ export default function CommunityPreview() {
         {/* {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} />
         ))} */}
-        <ServiceCard  index={1} />
-        <ServiceCard  index={2} />
-        <ServiceCard  index={3} />
+
+{images && images.map(img => (
+    <CommunityCard 
+    Image_Url={img.Image_Url}
+    UserName={img.UserName}
+    name={img.user_Name}
+    />
+))}
       </div>
 
     
     </>
-    // <motion.div
-    //   variants={textVariant(1.0)}
-    //   initial="hidden"
-    //   whileInView="show"
-    //   viewport={{ once: true, amount: 0.25 }}
-    // >
-    //   <div class="mt-10">
-    //     <h1 class="text-center text-2xl font-bold text-[#EEEEEE]">Community</h1>
-    //   </div>
 
-    //   <section class="py-10">
-    //     <div class="mx-auto grid max-w-6xl  grid-cols-2 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //       <CommunityCard />
-    //     </div>
-    //   </section>
-    // </motion.div>
   );
 }
 
-const ServiceCard = ({ index }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={textVariant(1.0)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px]'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-[#050816] rounded-[20px] min-h-[200px] flex justify-evenly items-center flex-col card1'
-      >
-        <img
-          src='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
-          alt='web-development'
-          className='h-[200px] w-full rounded-[20px] '
-        />
-        <div class="content">
-        <p class="title mb-3">@user</p>
-    <ul class="sci justify-between cursor-pointer gap-64 mt-7">
-      <li>
-        <a>
-          <div>
-          <HeartIcon className="w-7 h-7 hover:transform hover:scale-105"/>
-        <p className="text-center mt-1">113</p>
-          </div>
+
+//   <Tilt className='xs:w-[250px] w-full'>
+//     <motion.div
+//       variants={textVariant(1.0)}
+//       initial="hidden"
+//       whileInView="show"
+//       viewport={{ once: true, amount: 0.25 }}
+//       className='w-full green-pink-gradient p-[1px] rounded-[20px]'
+//     >
+//       <div
+//         options={{
+//           max: 45,
+//           scale: 1,
+//           speed: 450,
+//         }}
+//         className='bg-[#050816] rounded-[20px] min-h-[200px] flex justify-evenly items-center flex-col card1'
+//       >
+//         <img
+//           src='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
+//           alt='web-development'
+//           className='h-[200px] w-full rounded-[20px] '
+//         />
+//         <div class="content">
+//         <p class="title mb-3">@user</p>
+//     <ul class="sci justify-between cursor-pointer gap-64 mt-7">
+//       <li>
+//         <a>
+//           <div>
+//           <HeartIcon className="w-7 h-7 hover:transform hover:scale-105"/>
+//         <p className="text-center mt-1">113</p>
+//           </div>
  
-        </a>
-      </li>
+//         </a>
+//       </li>
 
-      <li>
-        <a>
-          <div>
-            <ChatBubbleOvalLeftEllipsisIcon className="w-7 h-7 hover:transform hover:scale-105"/>
-            <p className="text-center mt-1">113</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
+//       <li>
+//         <a>
+//           <div>
+//             <ChatBubbleOvalLeftEllipsisIcon className="w-7 h-7 hover:transform hover:scale-105"/>
+//             <p className="text-center mt-1">113</p>
+//           </div>
+//         </a>
+//       </li>
+//     </ul>
+//   </div>
 
-      </div>
+//       </div>
 
 
 
  
-    </motion.div>
-  </Tilt>
-);
+//     </motion.div>
+//   </Tilt>
+// );
 
 
