@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <div>
       
-<footer class="p-4 bg-[#050816]  rounded-lg shadow md:px-6 md:py-8 mt-20">
+<footer class="p-4 bg-[#050816]  rounded-lg shadow md:px-6 md:py-8 mt-20 " >
     <div class="sm:flex sm:items-center sm:justify-between">
-        <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+        <a  class="flex items-center mb-4 sm:mb-0">
             <img src="/menu.svg" class="h-8 mr-3" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Quest.io</span>
         </a>
