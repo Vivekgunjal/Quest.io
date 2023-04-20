@@ -28,7 +28,7 @@ export default function Navbar() {
       whileInView="show"
       className={`${styles.xPaddings} py-8 relative`}
     >
-      {/* <div className="absolute w-[50%] inset-0 gradient-01"/> */}
+      <div className="absolute w-[50%] inset-0 gradient-01 -z-50"/>
       <Disclosure as="nav" className="z-[50]">
         {({ open }) => (
           <>

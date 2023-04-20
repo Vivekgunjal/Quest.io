@@ -13,10 +13,10 @@ export default function chatgptcomponents() {
     <div>    <div className="bg-[#050816] overflow-hidden">
        
     <Head>
-      <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
+      <title>Quest.IO</title>
       <meta
         name="description"
-        content="Nextly is a free landing page template built with next.js & Tailwind CSS"
+        content="Quest.IO is a platform that helps you to solve your problems and get answers to your questions."
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>

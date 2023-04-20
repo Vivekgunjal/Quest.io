@@ -49,8 +49,9 @@ console.log(newData)
     }, []);
 
   return (
-    <>
- 
+    
+   <div > 
+
       <motion.div variants={textVariant(0.75)}>
         <p className='mt-16 text-center text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] mx-auto'>Community</p>
       </motion.div>
@@ -63,16 +64,17 @@ console.log(newData)
         ))} */}
 
 {images && images.map(img => (
-    <CommunityCard 
-    Image_Url={img.Image_Url}
-    UserName={img.UserName}
-    name={img.user_Name}
-    />
-))}
+  <CommunityCard 
+  Image_Url={img.Image_Url}
+  UserName={img.UserName}
+  name={img.user_Name}
+  />
+  ))}
       </div>
 
     
-    </>
+  </div>
+  
 
   );
 }
@@ -108,7 +110,7 @@ console.log(newData)
 //           <HeartIcon className="w-7 h-7 hover:transform hover:scale-105"/>
 //         <p className="text-center mt-1">113</p>
 //           </div>
- 
+
 //         </a>
 //       </li>
 
@@ -127,7 +129,7 @@ console.log(newData)
 
 
 
- 
+
 //     </motion.div>
 //   </Tilt>
 // );
