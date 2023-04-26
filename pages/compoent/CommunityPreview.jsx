@@ -65,6 +65,7 @@ console.log(newData)
 
 {images && images.map(img => (
   <CommunityCard 
+  id={img.id}
   Image_Url={img.Image_Url}
   UserName={img.UserName}
   name={img.user_Name}

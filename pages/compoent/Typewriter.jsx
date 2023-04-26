@@ -31,10 +31,8 @@ const Typewriter = ({ text, scrollToView, containerRef }) => {
             fontFamily: '"Fira code", "Fira Mono", monospace',
             fontSize: 16,
           }}
-          className="p-6 w-full h-[70vh] placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#0d1117] text-white"
         />
-        
-        <h1>{displayText}</h1></>
+</>
  
   );
 };

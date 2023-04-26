@@ -29,7 +29,7 @@ export default function Community() {
                 id: doc.id,
               }));
               setimages(newData)
-console.log(newData)
+              console.log(newData.id)
             }
           );
       };
@@ -39,13 +39,14 @@ console.log(newData)
       }, []);
 
 
+
   return (
     <div className='p-7'>
-<section className="   bg-center rounded-lg mb-9 backdrop-blur-3xl w-[60%]">
+<section className="   bg-center rounded-lg mb-9 backdrop-blur-3xl w-[100%]">
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl  text-transparent bg-clip-text bg-gradient-to-l from-green-500 to-purple-500 ">Visualize an idea in Click Of Button </h1>
-            <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-gray-700"> To Create An Image throgh Your Mind </p>
+            <p className="max-w-3xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-gray-700"> To Create An Image throgh Your Mind </p>
             <a className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 bg-gradient-to-l from-green-500 to-purple-500 hover:opacity-50 cursor-pointer"
             onClick={() => router.push("/dalle")}
             >
@@ -65,6 +66,7 @@ console.log(newData)
 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 {images && images.map(img => (
     <CommunityCard 
+    id = {img.id}
     Image_Url={img.Image_Url}
     UserName={img.UserName}
     />
