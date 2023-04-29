@@ -4,7 +4,7 @@ import styles from "../../styles";
 import { navVariants } from "../../utils/motion";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon, UserCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 
 function classNames(...classes) {
@@ -95,26 +95,23 @@ export default function Navbar() {
                       <Menu.Button className="flex rounded-full text-sm">
                         <span className="sr-only">Open user menu</span>
                         {session ? (
+                          <div className="text-white flex items-center flex-col"
+                          onClick={() => signOut()}
+                          >
                           <img
                           className="h-8 w-8 rounded-full"
                           src={session.user?.image}
                           alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
-                          onClick={() => signOut()}
+                          
                         />
+                        <p className="mt-1 font-medium">{session && session.user.name}</p>
+                        </div>
                         ):(
-                          <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://cdn.shopify.com/s/files/1/0511/8319/0196/products/12_1.jpg?v=1649371686&width=1445"
-                          alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
-                          onClick={() => signIn()}
-                        />
+                          <div className="text-white flex items-center flex-col">
+                          <UserCircleIcon className="text-white flex items-center h-8 w-8" onClick={() => signIn()}/>
+                          <p>Sign Up</p>
+                          </div>
                         )}
-                        {/* <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://cdn.shopify.com/s/files/1/0511/8319/0196/products/12_1.jpg?v=1649371686&width=1445"
-                          alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
-                          onClick={() => signIn()}
-                        /> */}
                       </Menu.Button>
                     </div>
                   </Menu>

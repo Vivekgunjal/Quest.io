@@ -94,7 +94,8 @@ export default function CommunityCard({ id, Image_Url, UserName, name }) {
         </div>
         <div className="flex flex-col">
           {/* <HeartIcon className='w-6 h-6 transform transition duration-500 hover:scale-125' onClick={likePost}/> */}
-          {!likes ? (
+          {session ? (<>
+            {!likes ? (
             <HeartIcon
               className="w-6 h-6 text-red-700 fill-red-700 transform transition duration-500 hover:scale-125"
               onClick={deletePost}
@@ -105,6 +106,13 @@ export default function CommunityCard({ id, Image_Url, UserName, name }) {
               onClick={likePost}
             />
           )}
+          </>):(<>
+            <HeartIcon
+              className="w-6 h-6 transform transition duration-500 hover:scale-125"
+              onClick={() => signIn()}
+            />
+          </>)}
+     
           {getLikeNumber ? (
             <p className="text-sm mx-auto text-white ">{getLikeNumber}</p>
           ) : null}
