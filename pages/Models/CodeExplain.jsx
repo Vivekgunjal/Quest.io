@@ -55,7 +55,7 @@ export default function CodeExplain() {
         Convert simple Code into Another Programming Langauge.
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row gap-9">
+      <div className="flex flex-col lg:flex-row gap-9 h-[70vh]">
         <Editor
           value={prompt}
           onValueChange={(code) => setPrompt(code)}
@@ -64,16 +64,35 @@ export default function CodeExplain() {
           style={{
             fontFamily: '"Fira code", "Fira Mono", monospace',
             fontSize: 16,
+            backdropFilter: "blur(50px)",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            color: "white",
+            borderRadius: "10px",
+            border: "1px solid rgba(255,255,255,0.2)",
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
+            whiteSpace: "pre-wrap",
           }}
           className="p-6 w-full h-[70vh] placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#0d1117] text-white"
         />
 
         <div
-          className="p-6 w-full h-[70vh] placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#0d1117] text-white overflow-y-scroll scrollbar-hide cursor-default"
+          className="p-6 w-full h-[70vh] overflow-y-scroll scrollbar-hide cursor-default"
           placeholder="Paste your code here..."
           spellCheck="false"
           autoCorrect="false"
-          style={{ whiteSpace: "pre-wrap" }}
+          style={{ 
+            whiteSpace: "pre-wrap",
+            backdropFilter: "blur(50px)",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            color: "white",
+            borderRadius: "10px",
+            border: "1px solid rgba(255,255,255,0.2)",
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
+          }}
         >
           {code ? (
             <Typewriter text={code} />

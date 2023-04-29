@@ -22,13 +22,15 @@ export default function ChatGPTComponents() {
  variants={textVariant(0.9)}
         className="flex justify-center w-full"
       >
-        <span className="text-[2.5rem] uppercase text-white">examples</span>
+        <span className="text-[2.5rem] uppercase text-transparent bg-clip-text bg-gradient-to-l from-green-500 to-purple-500 mt-5">examples</span>
       </motion.div>
       <motion.div
         variants={textVariant(1.1)}
         className="flex justify-center w-full text-[1rem] text-white mt-3"
       >
-        Explore what's possible with some example applications
+        Explore what's possible 
+            with some example applications
+         
       </motion.div>
 
       {/* ChatGpt Components */}
@@ -37,7 +39,7 @@ export default function ChatGPTComponents() {
       className="flex flex-col mt-11 cursor-pointer">
         {/*  ChatGPT Cards */}
         {/* Code Converter */}
-        <div className=" flex lg:flex-row flex-col justify-center gap-8 p-12 pt-0"
+        <div className=" flex lg:flex-row flex-col justify-center gap-8 p-12 pt-0 h-[90vh]"
         >
           <div className="min-w-[31rem] max-w-[40rem] transform transition duration-500 hover:scale-95"
           onClick={() => router.push("/code-convert")}
