@@ -30,6 +30,17 @@ const Typewriter = ({ text, scrollToView, containerRef }) => {
           style={{
             fontFamily: '"Fira code", "Fira Mono", monospace',
             fontSize: 16,
+            backdropFilter: "blur(5px)",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            color: "white",
+            borderRadius: "10px",
+            border: "1px solid rgba(255,255,255,0.2)",
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
+            whiteSpace: "pre-wrap",
+
+
           }}
         />
 </>
