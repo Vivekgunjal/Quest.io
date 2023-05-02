@@ -33,8 +33,10 @@ export default function Banner() {
             }}
           />
         </motion.h1>
+
+        
         <motion.p
-          variants={textVariant(1.3)}
+          variants={textVariant(1.3) }
           className="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48  text-transparent bg-clip-text bg-gradient-to-l from-green-500 to-purple-500"
         >
         Make The Devs Around The Globe Happy By Investing In Their Projects.

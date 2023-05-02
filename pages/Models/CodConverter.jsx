@@ -80,7 +80,7 @@ export default function CodConverter() {
         />
 
         <div
-          className="p-6 w-full h-[70vh]  overflow-y-scroll scrollbar-hide cursor-default"
+          className="p-6 w-full h-[70vh]  overflow-y-scroll scrollbar-hide cursor-default "
           placeholder="Paste your code here..."
           spellCheck="false"
           autoCorrect="false"
@@ -94,6 +94,9 @@ export default function CodConverter() {
             width: "100%",
             height: "100%",
             overflow: "auto",
+            wordWrap: "break-word",
+            position: "relative",
+            zIndex: 1
           
             
             }}

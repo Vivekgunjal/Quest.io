@@ -10,8 +10,9 @@ import ChatGPTComponents from './ChatGPT_Components/ChatGPTComponents';
 
 export default function chatgptcomponents() {
   return (
-    <div>    <div className="bg-[#050816] overflow-hidden">
+        
        
+      <>
     <Head>
       <title>Quest.IO</title>
       <meta
@@ -20,13 +21,18 @@ export default function chatgptcomponents() {
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center">
+    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center h-screen w-full fixed -z-50">
+
+        
+       
+        </div>
         <Navbar />
         <ChatGPTComponents />
-      </div>
- 
-      <Footer />
     
-  </div></div>
+        <Footer />
+ 
+     
+    
+  </>
   )
 }
