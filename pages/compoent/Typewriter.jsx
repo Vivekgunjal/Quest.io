@@ -39,6 +39,10 @@ const Typewriter = ({ text, scrollToView, containerRef }) => {
             height: "100%",
             overflow: "auto",
             whiteSpace: "pre-wrap",
+            wordWrap: "break-word",
+            position: "relative",
+            zIndex: 1,
+            
 
 
           }}

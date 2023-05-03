@@ -28,7 +28,7 @@ export default function Navbar() {
       whileInView="show"
       className={`${styles.xPaddings} py-8 relative`}
     >
-      <div className="absolute w-[50%] inset-0 gradient-01 -z-50"/>
+      <div className="absolute w-[90%] inset-0 gradient-01 -z-50"/>
       <Disclosure as="nav" className="z-[50]">
         {({ open }) => (
           <>
@@ -69,6 +69,12 @@ export default function Navbar() {
                       </div>
                       <div
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/chatgptcomponents")}
+                      >
+                        Code
+                      </div>
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/community")}
                       >
                         Community
@@ -77,14 +83,11 @@ export default function Navbar() {
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/dalle")}
                       >
-                        DallE
+                      Image Generate
                       </div>
-                      <div
-                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
-                        onClick={() => router.push("/chatgptcomponents")}
-                      >
-                        ChatGPT
-                      </div>
+                     
+
+                     
                     </div>
                   </div>
                 </div>
@@ -121,12 +124,20 @@ export default function Navbar() {
 
             <Disclosure.Panel className="sm:hidden z-[50]">
               <div className="space-y-1 px-2 pt-2 pb-3">
-<div
+                        <div 
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/")}
                       >
-                        Home
+                      Home
                       </div>
+
+                      <div
+                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
+                        onClick={() => router.push("/chatgptcomponents")}
+                      >
+                        Code
+                      </div>
+                      
                       <div
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/community")}
@@ -137,14 +148,11 @@ export default function Navbar() {
                         className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
                         onClick={() => router.push("/dalle")}
                       >
-                        DallE
+                        Generate Image
                       </div>
-                      <div
-                        className="text-[#EEEEEE]  hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white px-3 py-2 rounded-md font-extrabold text-[20px] leading-[20px] cursor-pointer"
-                        onClick={() => router.push("/chatgptcomponents")}
-                      >
-                        ChatGPT
-                      </div>
+
+                      
+                      
               </div>
             </Disclosure.Panel>
           </>

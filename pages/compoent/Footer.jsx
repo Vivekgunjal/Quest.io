@@ -3,9 +3,9 @@
 
 export default function Footer() {
   return (
-    <div>
+    <div className="bottom-0">
       
-<footer class="p-4 bg-[#050816]  rounded-lg shadow md:px-6 md:py-8 mt-20 " >
+<footer class="p-4 bg-[#050816]  rounded-lg shadow md:px-6 md:py-8 mt-20" >
     <div class="sm:flex sm:items-center sm:justify-between">
         <a  class="flex items-center mb-4 sm:mb-0">
             <img src="/menu.svg" class="h-8 mr-3" alt="Flowbite Logo" />

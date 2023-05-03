@@ -57,9 +57,33 @@ export const textVariant = (delay) => ({
     transition: {
       type: 'spring',
       duration: delay,
+      delay: delay,
     },
   },
 });
+
+export const staggerChildren = (staggerChildren, delayChildren) => ({
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren,
+      delayChildren,
+    },
+  },
+});
+
+
+
+export const staggerChildren2 = (staggerChildren, delayChildren) => ({
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren,
+      delayChildren,
+    },
+  },
+});
+
 
 export const fadeIn1 = (direction, type, delay, duration) => {
   return {

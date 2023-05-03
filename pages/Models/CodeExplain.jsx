@@ -64,7 +64,7 @@ export default function CodeExplain() {
           style={{
             fontFamily: '"Fira code", "Fira Mono", monospace',
             fontSize: 16,
-            backdropFilter: "blur(50px)",
+            backdropFilter: "blur(5px)",
             backgroundColor: "rgba(0,0,0,0.5)",
             color: "white",
             borderRadius: "10px",
@@ -84,7 +84,7 @@ export default function CodeExplain() {
           autoCorrect="false"
           style={{ 
             whiteSpace: "pre-wrap",
-            backdropFilter: "blur(50px)",
+            backdropFilter: "blur(5px)",
             backgroundColor: "rgba(0,0,0,0.5)",
             color: "white",
             borderRadius: "10px",
