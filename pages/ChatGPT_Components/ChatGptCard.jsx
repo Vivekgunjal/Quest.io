@@ -7,19 +7,29 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HashtagIcon } from "@heroicons/react/24/outline";
 
- export default function ChatGptCard({data}) {
+ export default function ChatGptCard({data, icon, onClick}) {
+  const { head, desc, color } = data;
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
+
   return (
     <div className="min-w-[15rem] max-w-[40rem] transform transition duration-500 hover:scale-95"
     
   >
   <a
-      className="flex items-center rounded-lg shadow bg-transparent"
+      className="flex items-center rounded-lg shadow bg-transparent cursor-pointer"
+      onClick={handleClick}
     >
          <div
-      className="bg-gradient-to-b from-indigo-500 via-indigo-600 to-indigo-900 rounded-md h-16 w-16 flex flex-col justify-center items-center"
+      className={`rounded-md h-16 w-16 flex flex-col justify-center items-center ${color}`}
       >
-        
-        <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125"/>
+        {icon}
+        {/* <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125"/> */}
       </div>
             <div className="flex flex-col justify-between pl-4">
         <h5 className=" text-2xl font-bold tracking-tight text-white">

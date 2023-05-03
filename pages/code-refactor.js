@@ -1,4 +1,3 @@
-import React from 'react'
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
@@ -8,11 +7,16 @@ import { Footer, Navbar } from "./compoent";
 import Banner from "./compoent/Banner";
 import Code_Main from "./compoent/Code_Main";
 import CommunityPreview from "./compoent/CommunityPreview";
-import DallE_Image from './DallE_Component/DallE_Image';
+import CodConverter from "./Models/CodConverter";
+import CodeExplain from "./Models/CodeExplain";
+import TimeSpace from "./Models/TimeSpace";
+import CodeModel from "./Models/CodeModel";
 
-export default function dalle() {
-  return (
-    <>
+const inter = Inter({ subsets: ["latin"] });
+
+export default function coderefactor() {
+    return (
+        <>
         <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center h-screen w-full fixed -z-50 ">
         
         </div>
@@ -24,16 +28,13 @@ export default function dalle() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-<Banner />
-<DallE_Image />
-<Footer />
+        <Navbar />
+        <CodeModel promptString="Fix the bug in this function"/>
+        <Footer />
      
      
       
     
     </>
-  )
-}
-
-
+      )
+    }
