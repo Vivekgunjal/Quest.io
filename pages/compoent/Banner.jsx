@@ -44,7 +44,7 @@ export default function Banner() {
         <div className="flex flex-raw mb-8 lg:mb-16 space-y-0 sm:flex-row justify-center sm:space-y-0 sm:space-x-4">
           <motion.a
             variants={textVariant(1.7)}
-            href="#_"
+            href="#code_main"
             className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50"
           >
             <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>

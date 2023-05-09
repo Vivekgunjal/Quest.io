@@ -64,6 +64,7 @@ const sendPrompt = async () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
+      id="code_main"
     >
 
 <div className="design w-full flex flex-col lg:flex-row justify-between items-center bg-gradient-to-r from-blue-500 to-blue-600">
