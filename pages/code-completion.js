@@ -29,7 +29,7 @@ export default function codecompletion() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar />
-        <CodeModel promptString="Fix the bug in this function"/>
+        <CodeModel promptString="Fix the bug in this function" data={{head:"Code Completion", desc: "To Complete The Missing Logic And Syntax in Given Code"}}/>
         <Footer />
      
      

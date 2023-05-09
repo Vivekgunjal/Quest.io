@@ -11,23 +11,40 @@ import CodeExplain from './Models/CodeExplain';
 
 export default function codeexplain() {
   return (
-    <div>    <div className="bg-[#050816] overflow-hidden">
-       
+
+    <>
+    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center h-screen w-full fixed -z-50 "></div>
     <Head>
-      <title>Quest.IO- platform that helps you to solve your problems and get answers to your questions</title>
+      <title>Quest.IO</title>
       <meta
         name="description"
         content="Quest.IO- platform that helps you to solve your problems and get answers to your questions"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center">
-        <Navbar />
-        <CodeExplain />
-      </div>
+    <Navbar />
+    < CodeExplain/>
+    <Footer />
+  </>
+
+  //   <div>    <div className="bg-[#050816] overflow-hidden">
+       
+  //   <Head>
+  //     <title>Quest.IO- platform that helps you to solve your problems and get answers to your questions</title>
+  //     <meta
+  //       name="description"
+  //       content="Quest.IO- platform that helps you to solve your problems and get answers to your questions"
+  //     />
+  //     <link rel="icon" href="/favicon.ico" />
+  //   </Head>
+  //   <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/hmbiz2.appspot.com/o/herobg.png?alt=media&token=6153a9f3-e84d-4ba4-ac2f-55520b126bcd')] bg-cover bg-no-repeat bg-center">
+  //       <Navbar />
+  //       {/* <CodeExplain /> */}
+  //       < CodeExplain/>
+  //     </div>
  
-      <Footer />
+  //     <Footer />
     
-  </div></div>
+  // </div></div>
   )
 }

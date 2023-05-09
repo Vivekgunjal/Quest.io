@@ -12,7 +12,7 @@ import {
 import Typewriter from "typewriter-effect";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { HashtagIcon } from "@heroicons/react/24/outline";
+import { ArrowTrendingUpIcon, Bars4Icon, BugAntIcon, ChatBubbleBottomCenterIcon, ClockIcon, CodeBracketIcon, CubeTransparentIcon, HashtagIcon, LanguageIcon } from "@heroicons/react/24/outline";
 import ChatGptCard from "./ChatGptCard";
 
 export default function ChatGPTComponents() {
@@ -49,10 +49,10 @@ export default function ChatGPTComponents() {
             head: "Code Converter",
             desc: "Convert Code into Another Programming Langauge.",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-indigo-400 to-cyan-400",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <LanguageIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
           onClick={() => router.push("/code-convert")}
         />
@@ -77,10 +77,10 @@ export default function ChatGPTComponents() {
             head: "Time And Space",
             desc: "Time And Space Complexity",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-rose-400 to-red-500",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <ClockIcon  className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
           onClick={() => router.push("/time-and-space")}
         />
@@ -91,10 +91,10 @@ export default function ChatGPTComponents() {
             head: "Bug Fixer",
             desc: "Fix The BUg In Given COde",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-teal-200 to-teal-500",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <BugAntIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
           onClick={() => router.push("/bug-fixer")}
         />
@@ -105,11 +105,12 @@ export default function ChatGPTComponents() {
             head: "Code Summarizer",
             desc: "Summarize the code",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-slate-900 to-slate-700",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <ChatBubbleBottomCenterIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
+          onClick={() => router.push("/code-summarizer")}
         />
         {/* Code Optimization */}
         <ChatGptCard
@@ -117,11 +118,12 @@ export default function ChatGPTComponents() {
             head: "Code Optimization",
             desc: "Optimize the code",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-emerald-400 to-cyan-400",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <ArrowTrendingUpIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
+           onClick={() => router.push("/code-optimization")}
         />
         {/* Code Refactor */}
         <ChatGptCard
@@ -129,11 +131,12 @@ export default function ChatGPTComponents() {
             head: "Code Refactor",
             desc: "Refactor the code",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-fuchsia-500 to-cyan-500",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <Bars4Icon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
+          onClick={() => router.push("/code-refactor")}
         />
         {/* Code Generator */}
         <ChatGptCard
@@ -141,11 +144,12 @@ export default function ChatGPTComponents() {
             head: "Code Generator",
             desc: "Generate the code",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-fuchsia-500 to-pink-500",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <CubeTransparentIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
+          onClick={() => router.push("/code-generator")}
         />
         {/* Code Completion */}
         <ChatGptCard
@@ -153,11 +157,13 @@ export default function ChatGPTComponents() {
             head: "Code Completion",
             desc: "Complete the code",
             color:
-              "bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700",
+              "bg-gradient-to-r from-emerald-500 to-emerald-900",
           }}
           icon={
-            <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
+            <CodeBracketIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
+          onClick={() => router.push("/code-completion")}
+          
         />
       </div>
       {/* ChatGpt Components */}

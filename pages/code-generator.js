@@ -29,7 +29,7 @@ export default function codegenerator() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar />
-        <CodeModel promptString="Fix the bug in this function"/>
+        <CodeModel promptString="\nGenerate The Code For Above Query" data={{head:"Code Generater", desc: "Generate Code From A given Text Query  "}}/>
         <Footer />
      
      

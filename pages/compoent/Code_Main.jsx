@@ -12,8 +12,10 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { ClipboardIcon, CodeBracketIcon, CodeBracketSquareIcon, CommandLineIcon } from "@heroicons/react/24/outline";
 import Typewriter from "./Typewriter";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 export default function Code_Main() {
+  const [copy, setcopy] = useState(null);
     const [code, setCode] = useState(null);
     const [loader, setloader] = useState(false);
     const [prompt, setPrompt] = useState(`function onLoad(editor) {
@@ -78,7 +80,7 @@ const sendPrompt = async () => {
             Paste your code below:
           </div>
           <textarea
-            className="p-6 ml-3 w-full h-48 placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#233d54] text-white"
+            className="p-6 ml-3 w-full h-48 placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#141321] text-white"
             placeholder="Paste your code here..."
             value={prompt}
             spellCheck="false"
@@ -105,7 +107,7 @@ const sendPrompt = async () => {
             The following code does.
           </div>
           <div
-            className="p-6 mt-5 w-[100%] h-[270px] placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#233d54] text-white overflow-y-scroll scrollbar-hide cursor-default"
+            className="p-6 mt-5 w-[100%] h-[270px] placeholder-white placeholder-opacity-50 rounded-md resize-none focus:outline-none focus:border-transparent bg-[#141321] text-white overflow-y-scroll scrollbar-hide cursor-default"
             placeholder="Paste your code here..."
             spellCheck="false"
             autoCorrect="false"
@@ -120,8 +122,13 @@ const sendPrompt = async () => {
             ):(
               <>
               {loader ? (
-                                            <div class="boxes">
-                                            <div class="box">
+                                          
+                                                <div className="">
+                <div class=" top-0 left-0 right-0 bottom-0 w-full h-full z-50 overflow-hidden opacity-75 flex flex-col items-center justify-center">
+                <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+                </div>
+              
+                                            {/* <div class="box">
                                                 <div></div>
                                                 <div></div>
                                                 <div></div>
@@ -144,27 +151,32 @@ const sendPrompt = async () => {
                                                 <div></div>
                                                 <div></div>
                                                 <div></div>
-                                            </div>
+                                            </div> */}
                                         </div>
               ):null}
               </>
             )}
           </div>
 
+          <CopyToClipboard text={code}
+          onCopy={() => setcopy("Copied")}
+          >
+           <a
+            className="px-5 py-2.5 relative rounded group font-medium text-white inline-block mt-3 w-48"
+          >
+            <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
+            <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
+            <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
+            <span className="relative flex">
+              <ClipboardIcon className="w-6 h-6 mr-2" />
+              {copy ? copy : "Copy output"}
+              
+            </span>
+          </a>
 
-<a
-          href="#_"
-          className="px-5 py-2.5 relative rounded group font-medium text-white inline-block mt-3 w-48"
-        >
-          <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
-          <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
-          <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
-          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
-          <span className="relative flex">
-            <ClipboardIcon className="w-6 h-6 mr-2" />
-            Copy output
-          </span>
-        </a>
+        </CopyToClipboard>
+
       </div>
 
 </div>
