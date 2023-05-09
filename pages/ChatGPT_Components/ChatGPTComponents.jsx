@@ -45,12 +45,9 @@ export default function ChatGPTComponents() {
      
 
         <ChatGptCard
-          data={{
-            head: "Code Converter",
-            desc: "Convert Code into Another Programming Langauge.",
-            color:
-              "bg-gradient-to-r from-indigo-400 to-cyan-400",
-          }}
+            head= "Code Converter"
+            desc= "Convert Code into Another Programming Langauge."
+            color="bg-gradient-to-r from-indigo-400 to-cyan-400"
           icon={
             <LanguageIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -59,12 +56,10 @@ export default function ChatGPTComponents() {
 
         {/* Explain Code */}
         <ChatGptCard
-          data={{
-            head: "Explain code",
-            desc: "Explain a complicated piece of code.",
-            color:
-              "bg-gradient-to-b from-indigo-500 via-indigo-600 to-indigo-900",
-          }}
+            head= "Explain code"
+            desc= "Explain a complicated piece of code."
+            color=
+              "bg-gradient-to-b from-indigo-500 via-indigo-600 to-indigo-900"
           icon={
             <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -73,12 +68,11 @@ export default function ChatGPTComponents() {
 
         {/* Time And Space  */}
         <ChatGptCard
-          data={{
-            head: "Time And Space",
-            desc: "Time And Space Complexity",
-            color:
-              "bg-gradient-to-r from-rose-400 to-red-500",
-          }}
+            head="Time And Space"
+            desc= "Time And Space Complexity"
+            color=
+              "bg-gradient-to-r from-rose-400 to-red-500"
+
           icon={
             <ClockIcon  className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -87,12 +81,10 @@ export default function ChatGPTComponents() {
         {/* Bug Fixer */}
 
         <ChatGptCard
-          data={{
-            head: "Bug Fixer",
-            desc: "Fix The BUg In Given COde",
-            color:
-              "bg-gradient-to-r from-teal-200 to-teal-500",
-          }}
+            head="Bug Fixer"
+            desc= "Fix The BUg In Given COde"
+            color=
+              "bg-gradient-to-r from-teal-200 to-teal-500"
           icon={
             <BugAntIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -101,12 +93,10 @@ export default function ChatGPTComponents() {
 
         {/* Code Summarizer */}
         <ChatGptCard
-          data={{
-            head: "Code Summarizer",
-            desc: "Summarize the code",
-            color:
-              "bg-gradient-to-r from-slate-900 to-slate-700",
-          }}
+            head= "Code Summarizer"
+            desc= "Summarize the code"
+            color=
+              "bg-gradient-to-r from-slate-900 to-slate-700"
           icon={
             <ChatBubbleBottomCenterIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -114,12 +104,10 @@ export default function ChatGPTComponents() {
         />
         {/* Code Optimization */}
         <ChatGptCard
-          data={{
-            head: "Code Optimization",
-            desc: "Optimize the code",
-            color:
-              "bg-gradient-to-r from-emerald-400 to-cyan-400",
-          }}
+            head="Code Optimization"
+            desc= "Optimize the code"
+            color=
+              "bg-gradient-to-r from-emerald-400 to-cyan-400"
           icon={
             <ArrowTrendingUpIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -127,12 +115,10 @@ export default function ChatGPTComponents() {
         />
         {/* Code Refactor */}
         <ChatGptCard
-          data={{
-            head: "Code Refactor",
-            desc: "Refactor the code",
-            color:
-              "bg-gradient-to-r from-fuchsia-500 to-cyan-500",
-          }}
+            head="Code Refactor"
+            desc= "Refactor the code"
+            color=
+              "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
           icon={
             <Bars4Icon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -140,12 +126,10 @@ export default function ChatGPTComponents() {
         />
         {/* Code Generator */}
         <ChatGptCard
-          data={{
-            head: "Code Generator",
-            desc: "Generate the code",
-            color:
-              "bg-gradient-to-r from-fuchsia-500 to-pink-500",
-          }}
+            head= "Code Generator"
+            desc= "Generate the code"
+            color=
+              "bg-gradient-to-r from-fuchsia-500 to-pink-500"
           icon={
             <CubeTransparentIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -153,12 +137,10 @@ export default function ChatGPTComponents() {
         />
         {/* Code Completion */}
         <ChatGptCard
-          data={{
-            head: "Code Completion",
-            desc: "Complete the code",
-            color:
-              "bg-gradient-to-r from-emerald-500 to-emerald-900",
-          }}
+            head= "Code Completion"
+            desc= "Complete the code"
+            color=
+              "bg-gradient-to-r from-emerald-500 to-emerald-900"
           icon={
             <CodeBracketIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125" />
           }
@@ -166,51 +148,6 @@ export default function ChatGPTComponents() {
           
         />
       </div>
-      {/* ChatGpt Components */}
-
-      {/* <div className="min-w-[15rem] max-w-[40rem] transform transition duration-500 hover:scale-95"
-            onClick={() => router.push("/code-explain")}
-          >
-          <a
-              className="flex items-center rounded-lg shadow bg-transparent"
-            >
-                 <div
-              className="bg-gradient-to-b from-indigo-500 via-indigo-600 to-indigo-900 rounded-md h-16 w-16 flex flex-col justify-center items-center"
-              >
-                <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125"/>
-              </div>
-                    <div className="flex flex-col justify-between pl-4">
-                <h5 className=" text-2xl font-bold tracking-tight text-white">
-                Explain code
-                </h5>
-                <p className="mb-3 font-normal text-gray-400 ">
-                Explain a complicated piece of code.
-                </p>
-              </div>
-                </a>
-          </div> */}
-
-            {/* <div className="min-w-[15rem] max-w-[40rem] transform transition duration-500 hover:scale-95"
-          onClick={() => router.push("/code-convert")}
-          >
-          <a
-              className="flex items-center rounded-lg shadow bg-transparent"
-            >
-                <div
-              className="bg-gradient-to-b from-orange-400 via-orange-500 to-orange-700 rounded-md h-16 w-16 flex flex-col justify-center items-center"
-              >
-                <HashtagIcon className="w-6 h-6 text-white transform transition duration-500 hover:scale-125"/>
-              </div>
-                    <div className="flex flex-col justify-between pl-4">
-                <h5 className=" text-2xl font-bold tracking-tight text-white">
-                Code Converter
-                </h5>
-                <p className="mb-3 font-normal text-gray-400 ">
-                Convert Code into Another Programming Langauge.
-                </p>
-              </div>
-                </a>
-          </div> */}
     </motion.div>
   );
 }

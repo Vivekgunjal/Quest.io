@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useRef, useState } from "react";
-import { Footer, Navbar } from "./compoent";
 import Community from "./compoent/Community";
+import Navbar from "./compoent/Navbar";
+import Footer from "./compoent/Footer";
+
 
 export default function community() {
   return (

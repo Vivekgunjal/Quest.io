@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import styles from '../../styles';
 import { navVariants, slideIn, staggerContainer, textVariant, textVariant2 } from '../../utils/motion'
 
-export default function CodeModel({promptString,data}) {
+export default function CodeModel({promptString, head, desc}) {
     const [code, setCode] = useState(null);
     const [loader, setloader] = useState(false);
     const [prompt, setPrompt] = useState(`function onLoad(editor) {
@@ -50,9 +50,9 @@ export default function CodeModel({promptString,data}) {
     variants={textVariant(1.1)}
     className="p-7">
       <div className="mb-6">
-        <h1 className="text-white text-3xl">{data.head}</h1>
+        <h1 className="text-white text-3xl">{head}</h1>
         <p className="mb-3 font-normal text-gray-400 mt-3">
-        {data.desc}
+        {desc}
         </p>
       </div>
       <div className="flex flex-col lg:flex-row gap-9 h-[70vh]">

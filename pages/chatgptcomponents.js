@@ -4,9 +4,9 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useRef, useState } from "react";
-import { Footer, Navbar } from "./compoent";
 import ChatGPTComponents from './ChatGPT_Components/ChatGPTComponents';
-
+import Navbar from "./compoent/Navbar";
+import Footer from "./compoent/Footer";
 
 export default function chatgptcomponents() {
   return (

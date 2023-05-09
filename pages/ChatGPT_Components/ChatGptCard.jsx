@@ -7,9 +7,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HashtagIcon } from "@heroicons/react/24/outline";
 
- export default function ChatGptCard({data, icon, onClick}) {
-  const { head, desc, color } = data;
-
+ export default function ChatGptCard({head, desc, color, icon, onClick}) {
   const handleClick = () => {
     if (onClick) {
       onClick();
@@ -33,10 +31,10 @@ import { HashtagIcon } from "@heroicons/react/24/outline";
       </div>
             <div className="flex flex-col justify-between pl-4">
         <h5 className=" text-2xl font-bold tracking-tight text-white">
-        {data.head}
+        {head}
         </h5>
         <p className="mb-3 font-normal text-gray-400 ">
-        {data.desc}
+        {desc}
         </p>
       </div>
         </a>

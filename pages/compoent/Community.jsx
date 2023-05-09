@@ -83,6 +83,7 @@ export default function Community() {
               id={img.id}
               Image_Url={img.Image_Url}
               UserName={img.UserName}
+              name= {img.user_Name}
             />
           ))}
       </div>
