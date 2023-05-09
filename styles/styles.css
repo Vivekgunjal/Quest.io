@@ -1,16 +1,55 @@
+.loader {
+	border-top-color: #3498db;
+	-webkit-animation: spinner 1.5s linear infinite;
+	animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .boxes {
-    --size: 32px;
+    /* --size: 32px;
     --duration: 800ms;
     height: calc(var(--size) * 2);
     width: calc(var(--size) * 3);
     position: relative;
     transform-style: preserve-3d;
     transform-origin: 50% 50%;
-    /* margin-top: calc(var(--size) * 1.5 * -1); */
+    margin-top: calc(var(--size) * 1.5 * -1);
     margin-top: 110px;
     margin-left: 230px;
-    transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+    transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px); */
+ 
+      --size: 32px;
+      --duration: 800ms;
+      transform-style: preserve-3d;
+      transform-origin: 50% 50%;
+      transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+      height: 100%;
+      margin-top: 0%;
+      margin-left: 20%;
+      width: 100%;
+      position: relative;
+      
   }
+  
+
+  
   
   .boxes .box {
     width: var(--size);

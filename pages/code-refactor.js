@@ -29,7 +29,7 @@ export default function coderefactor() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar />
-        <CodeModel promptString="Fix the bug in this function"/>
+        <CodeModel promptString="\n Refactor Above Code" data={{head:"Code Refactor", desc: "Refactor Code In One Click"}}/>
         <Footer />
      
      

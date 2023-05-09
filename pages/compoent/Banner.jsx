@@ -64,7 +64,7 @@ export default function Banner() {
                 ></path>
               </svg>
             </span>
-            <span className="relative" style={{ whiteSpace: "pre-wrap" }}>
+            <span className="relative " style={{ whiteSpace: "pre-wrap" }} >
               Get Started
             </span>
           </motion.a>

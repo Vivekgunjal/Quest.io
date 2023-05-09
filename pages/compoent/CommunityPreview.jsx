@@ -58,7 +58,7 @@ console.log(newData)
 
 
 
-      <div className='mt-20 mx-10 grid grid-cols-2 gap-10 lg:gap-16 lg:grid-cols-4 md:grid-cols-3'>
+      <div className='mt-20 mx-10 grid grid-cols-2 gap-10 lg:gap-16 lg:grid-cols-4 md:grid-cols-3 '>
         {/* {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} />
         ))} */}

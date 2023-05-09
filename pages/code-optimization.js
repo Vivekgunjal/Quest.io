@@ -29,7 +29,7 @@ export default function codeoptimaztion() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar />
-        <CodeModel promptString="Fix the bug in this function"/>
+        <CodeModel promptString="\nOptimize Above Code" data={{head:"Code Optimization", desc: "Optimize The given Code Snippet "}}/>
         <Footer />
      
      

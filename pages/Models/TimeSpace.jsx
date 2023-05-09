@@ -50,9 +50,9 @@ export default function TimeSpace() {
     variants={textVariant(1.1)}
     className="p-7">
       <div className="mb-6">
-        <h1 className="text-white text-3xl">Code Converter</h1>
+        <h1 className="text-white text-3xl">Time And Space Complexity</h1>
         <p className="mb-3 font-normal text-gray-400 mt-3">
-        Convert simple Code into Another Programming Langauge.
+        Find Time And Space Complexity Of Your Code
         </p>
       </div>
       <div className="flex flex-col lg:flex-row gap-9 h-[70vh]">
@@ -99,32 +99,37 @@ export default function TimeSpace() {
           ) : (
             <>
               {loader ? (
-                <div className="boxes">
-                  <div class="box">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                  <div class="box">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                  <div class="box">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                  <div class="box">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                  <div className="overflow-hidden">
+                  <div class="fixed top-0 left-0 right-0 bottom-0 w-full h-full z-50 overflow-hidden opacity-75 flex flex-col items-center justify-center">
+                  <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
                   </div>
                 </div>
+                // <div className="boxes">
+                //   <div class="box">
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //   </div>
+                //   <div class="box">
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //   </div>
+                //   <div class="box">
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //   </div>
+                //   <div class="box">
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //     <div></div>
+                //   </div>
+                // </div>
               ) : null}
             </>
           )}

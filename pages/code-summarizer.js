@@ -29,7 +29,7 @@ export default function codesummarizer() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar />
-        <CodeModel promptString="summarize above code"/>
+        <CodeModel promptString="\n summarize above code" data={{head:"Code Summerize", desc: "Summerize The Given Code"}}/>
         <Footer />
      
      

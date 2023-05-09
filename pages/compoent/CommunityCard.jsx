@@ -90,7 +90,7 @@ export default function CommunityCard({ id, Image_Url, UserName, name }) {
             src={Image_Url}
             alt="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
           />
-          <h1 className="text-[1rem] truncate text-white">{UserName}</h1>
+          <h1 className="text-[1rem] text-clip  text-white">{name}</h1>
         </div>
         <div className="flex flex-col">
           {/* <HeartIcon className='w-6 h-6 transform transition duration-500 hover:scale-125' onClick={likePost}/> */}

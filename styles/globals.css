@@ -107,13 +107,15 @@
 }
 
 .design{
-  position: relative;
-  cursor: pointer;
-  opacity: 1;
-  box-shadow: 0 10px 15px -3px rgba(7, 129, 230, 0.4),0 4px 6px -4px rgba(33,150,243,.4);
-  border-radius: 10px;
-  background-color: #6B6ECC;
-  background: linear-gradient(45deg, #04051dea 0%, #2b566e 100%);
+
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 10px 15px -3px rgba(72, 10, 243, 0.4),0 4px 6px -4px rgba(57, 13, 97, 0.4);
+    border-radius: 10px;
+    background-color: #4823ac;
+    background: linear-gradient(45deg, #04051dea 0%, #3d2b6e 100%);
+  
 }
 
 
